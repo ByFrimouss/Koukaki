@@ -23,5 +23,103 @@ section {
     transform: translateY(0);
   }
 }
+/************** ROTATION DE FLEUR ORANGE ****************/
+.story__article::after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/******************* ANIMATION FLEUR BLANCHE **************/
+.story h2::after {
+  position: absolute;
+  left: 0.7em;
+  top: 6em;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/**************** ANIMATION FLEUR MAUVE ****************/
+#studio h2::before {
+  position: absolute;
+  left: -1em;
+  top: 0;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/************** ANIMATION DES PETITES FLEURS ORANGÉ **************/
+#studio h2::after {
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*************** ANIMATION DE LA FLEUR BLANCHE DU FOOTER ******************/
+.site-footer::before {
+  position: absolute;
+  left: 4em;
+  top: 0em;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/**************** ANIMATION DE LA FLEUR MAUVE DU FOOTER **************/
+.site-footer::after {
+  position: absolute;
+  right: -4em;
+  bottom: 7.8em;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /*# sourceMappingURL=theme.css.map */
