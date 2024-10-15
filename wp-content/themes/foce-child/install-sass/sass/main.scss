@@ -1,17 +1,20 @@
-section {
-    opacity: 0; /*Invisible*/
-    transform: translateY(-50px); /* Position vers le bas*/
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation */
-  }
-  
-  /* Classe à ajouter via JavaScript pour activer l'animation*/
-  .section-visible {
+// Fonction pour la rotation
+  @function rotateAnimation($duration: 20s, $timing: linear, $iteration: infinite) {
+  @return $duration $timing $iteration;
+}
+
+// Mixin pour l'animation de fade-in
+@mixin fadeIn($duration: 0.8s, $easing: ease-out) {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity $duration $easing, transform $duration $easing;
+
+  &.section-visible {
     opacity: 1;
     transform: translateY(0);
-    animation: fade-in 0.8s ease-out forwards; /* Animation de fade-in*/
+    animation: fade-in $duration $easing forwards;
   }
-  
-  /* Définir une animation fade-in*/
+
   @keyframes fade-in {
     0% {
       opacity: 0;
@@ -22,102 +25,69 @@ section {
       transform: translateY(0);
     }
   }
+}
 
-  /************** ROTATION DE FLEUR ORANGE ****************/
+// Mixin pour appliquer la rotation
+  @mixin rotatingElement($duration: 20s, $timing: linear, $iteration: infinite) {
+    animation: rotate #{rotateAnimation($duration, $timing, $iteration)};
+}
+
+section {
+  @include fadeIn(); // Applique le mixin de fadeIn
+}
+
+/******************** ROTATION GÉNÉRALE ********************/
+// Mixin pour les éléments avec rotation
+@mixin rotate() {
+  @include rotateAnimation(); // Applique la fonction de rotation
+}
+
+// Utilisation du mixin pour différents éléments
 .story__article::after {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 15px;
-  animation: rotate 20s linear infinite;
+  @include rotatingElement(); // Applique la rotation
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/******************* ANIMATION FLEUR BLANCHE **************/
-.story h2::after {
+.story h2::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after {
   position: absolute;
+  @include rotatingElement(); // Applique la rotation
+}
+
+// Ajustements de positionnement spécifiques
+.story h2::after {
   left: 0.7em;
   top: 6em;
-  animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/**************** ANIMATION FLEUR MAUVE ****************/
 #studio h2::before {
-position: absolute;
-left: -1em;
-top: 0;
-animation: rotate 20s linear infinite;
+  left: -1em;
+  top: 0;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/************** ANIMATION DES PETITES FLEURS ORANGÉ **************/
 #studio h2::after {
-  position: absolute;
   right: 1em;
   top: 1.2em;
-  animation: rotate 20s linear infinite;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/*************** ANIMATION DE LA FLEUR BLANCHE DU FOOTER ******************/
 .site-footer::before {
-position: absolute;
-left: 4em;
-top: 0em;
-animation: rotate 20s linear infinite;
+  left: 4em;
+  top: 0em;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/**************** ANIMATION DE LA FLEUR MAUVE DU FOOTER **************/
 .site-footer::after {
-position: absolute;
-right: -4em;
-bottom: 7.8em;
-animation: rotate 20s linear infinite;
+  right: -4em;
+  bottom: 7.8em;
 }
 
+// Keyframes pour la rotation
 @keyframes rotate {
   from {
     transform: rotate(0deg);
