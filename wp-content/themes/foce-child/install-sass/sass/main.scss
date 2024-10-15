@@ -43,6 +43,11 @@ section {
 }
 
 // Utilisation du mixin pour différents éléments
+
+.site-footer {
+  position: relative;
+}
+
 .story__article::after {
   display: flex;
   flex-direction: column;
@@ -79,12 +84,14 @@ section {
 
 .site-footer::before {
   left: 4em;
-  top: 0em;
+  top: -20em;
+  z-index: 10;
 }
 
 .site-footer::after {
   right: -4em;
-  bottom: 7.8em;
+  bottom: 20em;
+  z-index: 10;
 }
 
 // Keyframes pour la rotation
@@ -94,5 +101,35 @@ section {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+// SECTION NOMINATION FESTIVAL
+
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+.nomination_oscars {
+  position: relative;
+
+  img {
+    height: 100%;
+  }
+
+  h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 3rem;
+    text-align: left;
+    font-size: 38px;
+    }
   }
 }
