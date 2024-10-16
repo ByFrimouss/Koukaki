@@ -1,25 +1,62 @@
 @charset "UTF-8";
-section {
+/*************** ANIMATION SECTION ******************/
+.section-fade-in {
   opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(200px);
+  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
 }
-section.section-visible {
+.section-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-  animation: fade-in 0.8s ease-out forwards;
 }
-@keyframes fade-in {
+
+.section-fade-in:nth-of-type(1) {
+  transition-delay: 0s;
+}
+
+.section-fade-in:nth-of-type(2) {
+  transition-delay: 0.3s;
+}
+
+.section-fade-in:nth-of-type(3) {
+  transition-delay: 0.6s;
+}
+
+/************** ANIMATION LOGO **************/
+.animation-titre {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: opacity 0.8s ease-out, transform 1s ease-out;
+}
+.animation-titre.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: flottement 3s ease-in-out infinite;
+}
+
+@keyframes flottement {
   0% {
-    opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
   100% {
-    opacity: 1;
     transform: translateY(0);
   }
 }
+/************* ANIMATION TITRE ******************/
+.section-titre {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 3s ease-out, transform 1s ease-out;
+}
+.section-titre.titre-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/*************** ANIMATION FLEURS ******************/
 /******************** ROTATION GÉNÉRALE ********************/
 .site-footer {
   position: relative;
@@ -44,8 +81,12 @@ section.section-visible {
 }
 
 .story h2::after {
-  left: 0.7em;
+  left: -7.4em;
   top: 6em;
+}
+
+.story h2::before {
+  left: -8em;
 }
 
 #studio h2::before {
@@ -61,7 +102,7 @@ section.section-visible {
 .site-footer::before {
   left: 4em;
   top: -20em;
-  z-index: 10;
+  z-index: 10 !important;
 }
 
 .site-footer::after {
@@ -101,6 +142,18 @@ section.section-visible {
   line-height: 3rem;
   text-align: left;
   font-size: 38px;
+}
+
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=theme.css.map */
