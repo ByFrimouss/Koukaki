@@ -1,51 +1,56 @@
 @charset "UTF-8";
-/*************** ANIMATION SECTION ******************/
-.section-fade-in {
+/* ANIMATION SECTION */
+/* Réinitialisation de l'état initial */
+.section {
+  opacity: 0; /* Masqué par défaut */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Pour les titres de section */
+.section-titre {
   opacity: 0;
-  transform: translateY(200px);
-  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
-}
-.section-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.section-fade-in:nth-of-type(1) {
-  transition-delay: 0s;
-}
-
-.section-fade-in:nth-of-type(2) {
-  transition-delay: 0.3s;
-}
-
-.section-fade-in:nth-of-type(3) {
-  transition-delay: 0.6s;
-}
-
-/************** ANIMATION LOGO **************/
-.animation-titre {
-  opacity: 0;
-  transform: translateY(150px);
-  transition: opacity 0.8s ease-out, transform 1s ease-out;
-}
-.animation-titre.visible {
-  opacity: 1;
-  transform: translateY(0);
-  animation: flottement 3s ease-in-out infinite;
-}
-
-@keyframes flottement {
+/************ ANIMATIONS ************/
+/* Animation de montée (fade-in vers le haut) */
+@keyframes fade-in-up {
   0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
+    opacity: 0;
+    transform: translateY(200px);
   }
   100% {
+    opacity: 1;
     transform: translateY(0);
   }
 }
-/************* ANIMATION TITRE ******************/
+/* Animation de descente (fade-in vers le bas) */
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Application d'animation via des classes */
+.section-visible-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.section-visible-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.titre-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ANIMATION  DES TITRES */
 .section-titre {
   opacity: 0;
   transform: translateY(50px);
@@ -56,21 +61,17 @@
   transform: translateY(0);
 }
 
-/*************** ANIMATION FLEURS ******************/
-/******************** ROTATION GÉNÉRALE ********************/
-.site-footer {
-  position: relative;
+/* Animation de rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-.story__article::after {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 15px;
-  animation: rotate 20s linear infinite;
-}
-
+/************** Application de l'animation de rotation ****************/
+.story__article::after,
 .story h2::after,
 #studio h2::before,
 #studio h2::after,
@@ -80,6 +81,7 @@
   animation: rotate 20s linear infinite;
 }
 
+/* Positionnements spécifiques */
 .story h2::after {
   left: -7.4em;
   top: 6em;
@@ -101,24 +103,15 @@
 
 .site-footer::before {
   left: 4em;
-  top: -20em;
-  z-index: 10 !important;
+  top: 0em;
 }
 
 .site-footer::after {
   right: -4em;
-  bottom: 20em;
-  z-index: 10;
+  bottom: 7.8em;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/** NOUVELLE SECTION **/
 .nomination {
   position: relative;
   padding: 150px 0 50px;
@@ -127,33 +120,147 @@
   gap: 40px 0;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
-.nomination .nomination_oscars {
+
+.nominationoscars {
   position: relative;
 }
-.nomination .nomination_oscars img {
+
+.nominationoscars img {
   height: 100%;
 }
-.nomination .nomination_oscars h3 {
+
+.nomination__oscars h3 {
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
-  line-height: 3rem;
+  line-height: 3.2rem;
   text-align: left;
   font-size: 38px;
 }
 
-#background-video {
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
+/** BANNER ET MEDIA QUERIES **/
+/* Réglages de la bannière */
+.banner {
+  position: relative;
+  height: 800px;
+}
+
+.bannerbackground {
+  z-index: -2;
+  position: absolute;
   bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
+
+.bannervideo {
   z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
+
+/* Flottaison du logo */
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+
+.move-up {
+  animation: move-up 2s 300ms both;
+}
+
+/*Opacity Move -down*/
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+/* Opacity move-up */
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Float elements */
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+} /** MEDIA QUERIES **/
+@media screen and (max-width: 768px) {
+  .bannervideo {
+    display: none;
+  }
+  .bannerbackground {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner {
+    height: 600px;
+  }
+  .bannerbackground {
+    min-width: 1200px;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 580px) {
+  .banner {
+    height: 400px;
+  }
+  .bannerbackground {
+    min-width: 900px;
+    opacity: 1;
+  }
+  .nomination__oscars h3 {
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    line-height: 3.2rem;
+    text-align: left;
+    font-size: 28px;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */
