@@ -76,7 +76,7 @@ get_header();
         </section>
             
             <!-- /* SECTION NOMINATION*/ -->
-            <?php get_template_part( 'template-part/nomination' ); ?>    
+            <?php get_template_part( 'template-parts/nomination-festival' ); ?>    
        
 
     </main><!-- #main -->

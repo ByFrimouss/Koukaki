@@ -1,12 +1,11 @@
 @charset "UTF-8";
 /* ANIMATION SECTION */
-/* Réinitialisation de l'état initial */
 .section {
-  opacity: 0; /* Masqué par défaut */
+  opacity: 0;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Pour les titres de section */
+/* TITRE DE SECTION */
 .section-titre {
   opacity: 0;
   transform: translateY(50px);
@@ -18,7 +17,7 @@
 @keyframes fade-in-up {
   0% {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(-200px);
   }
   100% {
     opacity: 1;
@@ -29,7 +28,7 @@
 @keyframes fade-in-down {
   0% {
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(200px);
   }
   100% {
     opacity: 1;
@@ -146,7 +145,7 @@
   height: 800px;
 }
 
-.bannerbackground {
+.banner__background {
   z-index: -2;
   position: absolute;
   bottom: 0;
@@ -155,7 +154,7 @@
   opacity: 1;
 }
 
-.bannervideo {
+.banner__video {
   z-index: 1;
   position: absolute;
   bottom: 0;
@@ -197,7 +196,7 @@
     transform: translateY(0);
   }
 }
-/* Float elements */
+/* TITRE H1 ANIMATION */
 @keyframes float {
   0% {
     transform: translate3d(6px, 6px, 0);
@@ -226,7 +225,8 @@
   100% {
     transform: translate3d(6px, 6px, 0);
   }
-} /** MEDIA QUERIES **/
+}
+/** MEDIA QUERIES **/
 @media screen and (max-width: 768px) {
   .bannervideo {
     display: none;
