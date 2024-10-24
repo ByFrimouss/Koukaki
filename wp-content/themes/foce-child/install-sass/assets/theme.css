@@ -5,14 +5,6 @@
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* TITRE DE SECTION */
-.section-titre {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/************ ANIMATIONS ************/
 /* Animation de montée (fade-in vers le haut) */
 @keyframes fade-in-up {
   0% {
@@ -35,7 +27,7 @@
     transform: translateY(0);
   }
 }
-/* Application d'animation via des classes */
+/* Animation via des classes */
 .section-visible-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
@@ -44,12 +36,18 @@
   animation: fade-in-down 0.8s ease-out forwards;
 }
 
+/* ANIMATION  DES TITRES */
+.section-titre {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
 .titre-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ANIMATION  DES TITRES */
 .section-titre {
   opacity: 0;
   transform: translateY(50px);
@@ -60,7 +58,7 @@
   transform: translateY(0);
 }
 
-/* Animation de rotation */
+/* ANIMATION DE ROTATION DES FLEURS */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -69,7 +67,7 @@
     transform: rotate(360deg);
   }
 }
-/************** Application de l'animation de rotation ****************/
+/************** Animation de rotation sur chaque fleurs ****************/
 .story__article::after,
 .story h2::after,
 #studio h2::before,
@@ -80,7 +78,7 @@
   animation: rotate 20s linear infinite;
 }
 
-/* Positionnements spécifiques */
+/* Positionnements de chaque fleurs */
 .story h2::after {
   left: -7.4em;
   top: 6em;
@@ -110,7 +108,7 @@
   bottom: 7.8em;
 }
 
-/** NOUVELLE SECTION **/
+/** NOUVELLE SECTION ANIMATION-FESTIVAL **/
 .nomination {
   position: relative;
   padding: 150px 0 50px;
@@ -138,8 +136,7 @@
   font-size: 38px;
 }
 
-/** BANNER ET MEDIA QUERIES **/
-/* Réglages de la bannière */
+/* RÉGLAGE DE LA BANNIÈRE */
 .banner {
   position: relative;
   height: 800px;
@@ -163,7 +160,7 @@
   opacity: 1;
 }
 
-/* Flottaison du logo */
+/* FLOTTEMENT DU LOGO */
 .banner__logo {
   position: sticky;
   top: 80px;
@@ -228,10 +225,10 @@
 }
 /** MEDIA QUERIES **/
 @media screen and (max-width: 768px) {
-  .bannervideo {
+  .banner__video {
     display: none;
   }
-  .bannerbackground {
+  .banner__background {
     display: block;
     width: 100%;
   }
@@ -240,7 +237,7 @@
   .banner {
     height: 600px;
   }
-  .bannerbackground {
+  .banner__background {
     min-width: 1200px;
     opacity: 1;
   }
@@ -249,7 +246,7 @@
   .banner {
     height: 400px;
   }
-  .bannerbackground {
+  .banner__background {
     min-width: 900px;
     opacity: 1;
   }
@@ -261,6 +258,45 @@
     text-align: left;
     font-size: 28px;
   }
+}
+/* ANIMATION NUAGE */
+#place {
+  position: relative;
+  overflow: hidden; /* Empêche les éléments de déborder */
+}
+
+.story #place > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -100em;
+}
+
+#place .place--big_cloud,
+#place .place--little_cloud {
+  position: absolute;
+  filter: blur(8px);
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+}
+
+#place .place--big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+}
+
+#place .place--little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+}
+
+#place div {
+  position: relative;
+  z-index: 3; /* Le texte passe au-dessus des nuages */
 }
 
 /*# sourceMappingURL=theme.css.map */

@@ -5,15 +5,6 @@
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* TITRE DE SECTION */
-.section-titre {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-/************ ANIMATIONS ************/
-
 /* Animation de montée (fade-in vers le haut) */
 @keyframes fade-in-up {
   0% {
@@ -38,7 +29,7 @@
   }
 }
 
-/* Application d'animation via des classes */
+/* Animation via des classes */
 .section-visible-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
@@ -47,12 +38,19 @@
   animation: fade-in-down 0.8s ease-out forwards;
 }
 
+/* ANIMATION  DES TITRES */
+
+.section-titre {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
 .titre-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ANIMATION  DES TITRES */
 .section-titre {
   opacity: 0;
   transform: translateY(50px);
@@ -64,7 +62,7 @@
   }
 }
 
-/* Animation de rotation */
+/* ANIMATION DE ROTATION DES FLEURS */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -74,7 +72,7 @@
   }
 }
 
-/************** Application de l'animation de rotation ****************/
+/************** Animation de rotation sur chaque fleurs ****************/
 .story__article::after,
 .story h2::after,
 #studio h2::before,
@@ -85,7 +83,7 @@
   animation: rotate 20s linear infinite;
 }
 
-/* Positionnements spécifiques */
+/* Positionnements de chaque fleurs */
 .story h2::after {
   left: -7.4em;
   top: 6em;
@@ -100,175 +98,257 @@
   top: 0;
 }
 
-  #studio h2::after {
-    right: 1em;
-    top: 1.2em;
-  }
+#studio h2::after {
+  right: 1em;
+  top: 1.2em;
+}
   
-  .site-footer::before {
-    left: 4em;
-    top: 0em;
-  }
+.site-footer::before {
+  left: 4em;
+  top: 0em;
+}
   
-  .site-footer::after {
-    right: -4em;
-    bottom: 7.8em;
-  }
-  /** NOUVELLE SECTION **/
-  .nomination {
-    position: relative;
-    padding: 150px 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 0;
-    justify-content: center;
-    align-items: center;
-  }
+.site-footer::after {
+  right: -4em;
+  bottom: 7.8em;
+}
+
+  /** NOUVELLE SECTION ANIMATION-FESTIVAL **/
+
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
   
-  .nominationoscars {
-    position: relative;
-  }
+.nominationoscars {
+  position: relative;
+}
   
-  .nominationoscars img {
-    height: 100%;
-  }
+.nominationoscars img {
+  height: 100%;
+}
   
-  .nomination__oscars h3 {
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    line-height: 3.2rem;
-    text-align: left;
-    font-size: 38px;
-  }
+.nomination__oscars h3 {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+  font-size: 38px;
+}
   
-  /** BANNER ET MEDIA QUERIES **/
+  /* RÉGLAGE DE LA BANNIÈRE */
+
+.banner {
+  position: relative;
+  height: 800px;
+}
   
-  /* Réglages de la bannière */
-  .banner {
-    position: relative;
-    height: 800px;
-  }
+.banner__background {
+  z-index: -2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
   
-  .banner__background {
-    z-index: -2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    min-width: 1440px;
-    opacity: 1;
-  }
+.banner__video {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
   
-  .banner__video {
-    z-index: 1;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    min-width: 1440px;
-    opacity: 1;
-  }
-  
-  /* Flottaison du logo */
-  .banner__logo {
-    position: sticky;
-    top: 80px;
-    z-index: 10;
-    animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
-  }
-  .move-up {
-    animation: move-up 2s 300ms both;
-  }
+  /* FLOTTEMENT DU LOGO */
+
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+.move-up {
+  animation: move-up 2s 300ms both;
+}
+
   /*Opacity Move -down*/
-  @keyframes move-down {
-    0% {
-      transform: translateY(-300px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      visibility: visible;
-    }
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
   }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
   
   /* Opacity move-up */
-  @keyframes move-up {
-    0% {
-      transform: translateY(600px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-    }
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
   }
+  100% {
+    transform: translateY(0);
+  }
+}
   
   
   /* TITRE H1 ANIMATION */
-  @keyframes float {
-    0% {
-      transform: translate3d(6px,6px,0);
-    }
-    12% {
-      transform: translate3d(0px,6px,0);
-    }
-    24% {
-      transform: translate3d(6px,-4px,0);
-    }
-    36% {
-      transform: translate3d(6px,0px,0);
-    }
-    48% {
-      transform: translate3d(-4px,-6px,0);
-    }
-    60% {
-      transform: translate3d(0px,-4px,0);
-    }
-    72% {
-      transform: translate3d(-8px,6px,0);
-    }
-    84% {
-      transform: translate3d(-4px,0px,0);
-    }
-    100% {
-      transform: translate3d(6px,6px,0);
-    }
+
+@keyframes float {
+  0% {
+    transform: translate3d(6px,6px,0);
   }
+  12% {
+    transform: translate3d(0px,6px,0);
+  }
+  24% {
+    transform: translate3d(6px,-4px,0);
+  }
+  36% {
+    transform: translate3d(6px,0px,0);
+  }
+  48% {
+    transform: translate3d(-4px,-6px,0);
+  }
+  60% {
+    transform: translate3d(0px,-4px,0);
+  }
+  72% {
+    transform: translate3d(-8px,6px,0);
+  }
+  84% {
+    transform: translate3d(-4px,0px,0);
+  }
+  100% {
+    transform: translate3d(6px,6px,0);
+  }
+}
   
   /** MEDIA QUERIES **/
   
-  @media screen and (max-width: 768px) {
-    .bannervideo {
-      display: none;
-    }
-    .bannerbackground {
-      display: block;
-      width: 100%;
-    }
+@media screen and (max-width: 768px) {
+  .banner__video {
+    display: none;
   }
+  .banner__background {
+    display: block;
+    width: 100%;
+  }
+}
   
-  @media screen and (max-width: 700px) {
-    .banner {
-      height: 600px;
-    }
-    .bannerbackground {
-      min-width: 1200px;
-      opacity: 1;
-    }
+@media screen and (max-width: 700px) {
+  .banner {
+    height: 600px;
   }
+  .banner__background {
+    min-width: 1200px;
+    opacity: 1;
+  }
+}
   
-  @media screen and (max-width: 580px) {
-    .banner {
-      height: 400px;
-    }
-    .bannerbackground {
-      min-width: 900px;
-      opacity: 1;
-    }
-    .nomination__oscars h3 {
-      position: absolute;
-      top: 43%;
-      transform: translateY(-50%);
-      line-height: 3.2rem;
-      text-align: left;
-      font-size: 28px;
+@media screen and (max-width: 580px) {
+  .banner {
+    height: 400px;
   }
+  .banner__background {
+    min-width: 900px;
+    opacity: 1;
   }
+  .nomination__oscars h3 {
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    line-height: 3.2rem;
+    text-align: left;
+    font-size: 28px;
+  }
+}
+
+/* ANIMATION NUAGE */
+
+// .story #place  {
+//   position: relative;
+// }
+
+// .background-place {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: auto;
+//   z-index: -10;
+// }
+
+// #place .place--big_cloud,
+// #place .place--little_cloud {
+//   position: absolute;
+//   filter: blur(4px);
+//   z-index: -5;
+// }
+
+// #place .place--big_cloud {
+//   height: 122px;
+//   top: 70px;
+//   right: 90px;
+// }
+
+// #place .place--little_cloud {
+//   height: 55px;
+// 	top: 250px;
+//   right: 500px;
+// }
+
+// .place-content {
+//   position: relative;
+//   z-index: 1;
+// }
+
+#place {
+  position: relative;
+  overflow: hidden; /* Empêche les éléments de déborder */
+}
+
+.story #place > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -100em;
+}
+
+#place .place--big_cloud,
+#place .place--little_cloud {
+  position: absolute;
+  filter: blur(8px);
+  transition: transform 0.3s ease-out;
+  z-index: 2;
+}
+
+#place .place--big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+}
+
+#place .place--little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+}
+
+#place div {
+  position: relative;
+  z-index: 3; /* Le texte passe au-dessus des nuages */
+}

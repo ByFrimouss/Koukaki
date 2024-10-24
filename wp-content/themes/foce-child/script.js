@@ -1,4 +1,5 @@
 /* ANIMATION DES SECTION */
+
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
 
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ANIMATION DES TITRES */
+
 document.addEventListener("DOMContentLoaded", () => {
   const titles = document.querySelectorAll(".section-titre");
 
@@ -38,3 +40,43 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('load', checkVisibility); // Vérifier au chargement initial
 });
 
+/* CAROUSEL */
+
+document.addEventListener("DOMContentLoaded", function () {
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+  });
+
+
+/* ANIMATION DES NUAGES */
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Sélectionner les nuages
+    const bigCloud = document.querySelector('.place--big_cloud');
+    const littleCloud = document.querySelector('.place--little_cloud');
+  
+    // Fonction qui ajuste la position des nuages en fonction du scroll
+    function moveClouds() {
+      // Obtenir la position de défilement actuelle
+      const scrollPosition = window.scrollY;
+  
+      // Calculer les nouveaux déplacements des nuages basés sur le scroll (maximum 300px vers la gauche)
+      const moveBigCloud = Math.min(scrollPosition * 0.2, 500);  // Gros nuage se déplace à 10% de la vitesse du scroll
+      const moveLittleCloud = Math.min(scrollPosition * 0.1, 300);  // Petit nuage se déplace plus lentement (10%)
+  
+      // Appliquer la transformation pour déplacer les nuages
+      bigCloud.style.transform = `translateX(-${moveBigCloud}px)`;
+      littleCloud.style.transform = `translateX(-${moveLittleCloud}px)`;
+    }
+  
+    // Attacher la fonction au scroll de la fenêtre
+    window.addEventListener('scroll', moveClouds);
+  });
+  

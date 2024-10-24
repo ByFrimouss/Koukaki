@@ -19,7 +19,7 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-            <!-- ici -->
+           
             <?php
             $args = array(
                 'post_type' => 'characters',
@@ -56,10 +56,18 @@ get_header();
                     ?>
                 </div>
             </article>
-            <!-- juska la -->
+        
             <article id="place">
+
+                <img src="<?php echo get_theme_file_uri() . '/images/Studio_Koukaki-image_place.png'; ?>"
+                    alt="arrière plan nuage montagne">
+
+                <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>"
+                    alt="Gros nuage qui passe">
+                <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
+      
                 <div>
-                    <h3 class="section-titre">Le Lieu</h3>
+                    <h3> <span class="section-titre">Le Lieu </span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 
