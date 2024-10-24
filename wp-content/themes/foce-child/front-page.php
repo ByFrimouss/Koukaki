@@ -67,7 +67,7 @@ get_header();
                 <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
       
                 <div>
-                    <h3> <span class="section-titre">Le Lieu </span></h3>
+                    <h3> <span class="section-titre">Le Lieu </span></h3> <br>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
 

@@ -271,15 +271,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-left: -100em;
+  margin-left: -95em;
+  margin-top: -3em;
+  z-index: 5;
 }
 
 #place .place--big_cloud,
 #place .place--little_cloud {
   position: absolute;
   filter: blur(8px);
-  transition: transform 0.3s ease-out;
-  z-index: 2;
 }
 
 #place .place--big_cloud {
@@ -292,11 +292,6 @@
   height: 55px;
   top: 250px;
   right: 500px;
-}
-
-#place div {
-  position: relative;
-  z-index: 3; /* Le texte passe au-dessus des nuages */
 }
 
 /*# sourceMappingURL=theme.css.map */

@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
           // Animation de descente pour les autres sections
           setTimeout(() => {
               section.classList.add("section-visible-down");
-          }, index * 500); // Délai de 500ms entre chaque section pour un effet fluide
+          }, index * 0); // Délai de 0ms entre chaque section
       }
   });
-
-  console.log("Les sections s'affichent progressivement !");
 });
 
 /* ANIMATION DES TITRES */
@@ -58,25 +56,43 @@ var swiper = new Swiper('.swiper-container', {
 /* ANIMATION DES NUAGES */
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Sélectionner les nuages
+    // Sélectionner les nuages et la section "Le Lieu"
     const bigCloud = document.querySelector('.place--big_cloud');
     const littleCloud = document.querySelector('.place--little_cloud');
-  
-    // Fonction qui ajuste la position des nuages en fonction du scroll
-    function moveClouds() {
-      // Obtenir la position de défilement actuelle
-      const scrollPosition = window.scrollY;
-  
-      // Calculer les nouveaux déplacements des nuages basés sur le scroll (maximum 300px vers la gauche)
-      const moveBigCloud = Math.min(scrollPosition * 0.2, 500);  // Gros nuage se déplace à 10% de la vitesse du scroll
-      const moveLittleCloud = Math.min(scrollPosition * 0.1, 300);  // Petit nuage se déplace plus lentement (10%)
-  
-      // Appliquer la transformation pour déplacer les nuages
-      bigCloud.style.transform = `translateX(-${moveBigCloud}px)`;
-      littleCloud.style.transform = `translateX(-${moveLittleCloud}px)`;
+    const placeSection = document.querySelector('#place');
+
+    // Vérifier si les éléments existent dans le DOM
+    if (!bigCloud || !littleCloud || !placeSection) {
+        console.error("Les éléments requis (nuages ou section) n'ont pas été trouvés.");
+        return;
     }
-  
+
+    // Fonction qui ajuste la position des nuages en fonction du scroll dans la section "Le Lieu"
+    function moveClouds() {
+        // Obtenir la position de la section "Le Lieu" par rapport au haut de la page
+        const sectionTop = placeSection.offsetTop;
+        const sectionHeight = placeSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        // Vérifier si le scroll est dans la section "Le Lieu"
+        if (scrollPosition >= sectionTop && scrollPosition <= (sectionTop + sectionHeight)) {
+            // Calculer le pourcentage de scroll dans la section "Le Lieu"
+            const scrollInSection = scrollPosition - sectionTop;
+            const sectionScrollRatio = scrollInSection / sectionHeight;
+
+            // Ajuster les déplacements pour que les nuages atteignent le bord gauche (limite plus élevée)
+            const moveBigCloud = Math.min(sectionScrollRatio * 380, 380); // Ajusté à 300px maximum pour un mouvement plus lent
+            const moveLittleCloud = Math.min(sectionScrollRatio * 460, 460); // Ajusté à 500px maximum pour un déplacement plus visible
+
+            // Appliquer la transformation pour déplacer les nuages
+            bigCloud.style.transform = `translateX(-${moveBigCloud}px)`;
+            littleCloud.style.transform = `translateX(-${moveLittleCloud}px)`;
+        }
+    }
+
     // Attacher la fonction au scroll de la fenêtre
     window.addEventListener('scroll', moveClouds);
-  });
+});
+
+
   
