@@ -4,7 +4,9 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-         <!-- Add Video & banner background -->
+
+         <!-- Rajout de l'image en fallback + vidéo-->
+
     <section class="banner">
         <img class="banner__background" src="/images/banner.png" alt="Arrière-plan orangé fleurs et chats">
         <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
@@ -20,43 +22,9 @@ get_header();
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
            
-            <?php
-            $args = array(
-                'post_type' => 'characters',
-                'posts_per_page' => -1,
-                'meta_key'  => '_main_char_field',
-                'orderby'   => 'meta_value_num',
 
-            );
-            $characters_query = new WP_Query($args);
-            ?>
-            <article id="characters">
-                <div class="main-character">
-                    <h3 class="section-titre">Les personnages</h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-                </div>
-                <div class="other-characters">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<figure>';
-                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
-                        echo '<figcaption>';
-                        the_title();
-                        echo'</figcaption>';
-                        echo '</figure>';
-                    }
-                    ?>
-                </div>
-            </article>
-        
+            <?php get_template_part('/template-parts/caroussel'); ?>
+
             <article id="place">
 
                 <img src="<?php echo get_theme_file_uri() . '/images/Studio_Koukaki-image_place.png'; ?>"
@@ -83,7 +51,8 @@ get_header();
             </div>
         </section>
             
-            <!-- /* SECTION NOMINATION*/ -->
+            <!-- SECTION NOMINATION -->
+
             <?php get_template_part( 'template-parts/nomination-festival' ); ?>    
        
 

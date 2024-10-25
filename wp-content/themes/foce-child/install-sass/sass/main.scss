@@ -1,4 +1,4 @@
-/* ANIMATION SECTION */
+/************************ ANIMATION SECTION ************************/
 
 .section {
   opacity: 0;
@@ -38,7 +38,7 @@
   animation: fade-in-down 0.8s ease-out forwards;
 }
 
-/* ANIMATION  DES TITRES */
+/***************************** ANIMATION  DES TITRES ***************************/
 
 .section-titre {
   opacity: 0;
@@ -62,7 +62,7 @@
   }
 }
 
-/* ANIMATION DE ROTATION DES FLEURS */
+/******************** ANIMATION DE ROTATION DES FLEURS *****************************/
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -85,12 +85,12 @@
 
 /* Positionnements de chaque fleurs */
 .story h2::after {
-  left: -7.4em;
+  left: -6em;
   top: 6em;
 }
 
 .story h2::before {
-  left: -8em;
+  left: -7em;
 }
 
 #studio h2::before {
@@ -309,4 +309,23 @@
   height: 55px;
   top: 250px;
   right: 500px;
+}
+
+/****************** CAROUSSEL ********************/
+
+.swiper-container {
+  width: 100%;
+  height: 400px; /* Ajustez la hauteur selon vos besoins */
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+figure img {
+  max-width: 100%;
+  border-radius: 10px;
 }

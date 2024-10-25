@@ -40,18 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* CAROUSEL */
 
-document.addEventListener("DOMContentLoaded", function () {
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-  });
-
+document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".swiper-container", {
+        effect: "coverflow",
+        grabCursor: true,
+        slidesPerView: 3,  // Afficher 3 images
+        centeredSlides: true,
+        coverflowEffect: {
+            rotate: 20,
+            depth: 20,
+            modifier: 1,
+        },
+    });
+});
 
 /* ANIMATION DES NUAGES */
 
@@ -60,12 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const bigCloud = document.querySelector('.place--big_cloud');
     const littleCloud = document.querySelector('.place--little_cloud');
     const placeSection = document.querySelector('#place');
-
-    // Vérifier si les éléments existent dans le DOM
-    if (!bigCloud || !littleCloud || !placeSection) {
-        console.error("Les éléments requis (nuages ou section) n'ont pas été trouvés.");
-        return;
-    }
 
     // Fonction qui ajuste la position des nuages en fonction du scroll dans la section "Le Lieu"
     function moveClouds() {
@@ -93,6 +88,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Attacher la fonction au scroll de la fenêtre
     window.addEventListener('scroll', moveClouds);
 });
-
-
-  
