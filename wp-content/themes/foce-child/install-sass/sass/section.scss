@@ -1,0 +1,39 @@
+/************************ ANIMATION SECTION ************************/
+
+.section {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* Animation de montée (fade-in vers le haut) */
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation de descente (fade-in vers le bas) */
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation via des classes */
+  .section-visible-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .section-visible-down {
+    animation: fade-in-down 0.8s ease-out forwards;
+  }

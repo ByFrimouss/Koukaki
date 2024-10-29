@@ -8,7 +8,7 @@ get_header();
          <!-- Rajout de l'image en fallback + vidéo-->
 
     <section class="banner">
-        <img class="banner__background" src="/images/banner.png" alt="Arrière-plan orangé fleurs et chats">
+        <img class="banner__background" src="/images/banner.png" alt="">
         <video class="banner__video" width="1440" autoplay="autoplay" muted="" loop="infinite">
             <source src="https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/DWP+IW_P9+Studio+d'animation/Studio+Koukaki-vide%CC%81o+header+sans+son+(1).mp4"
             type="video/mp4">

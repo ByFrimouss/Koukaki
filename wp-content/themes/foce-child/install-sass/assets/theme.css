@@ -58,56 +58,6 @@
   transform: translateY(0);
 }
 
-/******************** ANIMATION DE ROTATION DES FLEURS *****************************/
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/************** Animation de rotation sur chaque fleurs ****************/
-.story__article::after,
-.story h2::after,
-#studio h2::before,
-#studio h2::after,
-.site-footer::before,
-.site-footer::after {
-  position: absolute;
-  animation: rotate 20s linear infinite;
-}
-
-/* Positionnements de chaque fleurs */
-.story h2::after {
-  left: -6em;
-  top: 6em;
-}
-
-.story h2::before {
-  left: -7em;
-}
-
-#studio h2::before {
-  left: -1em;
-  top: 0;
-}
-
-#studio h2::after {
-  right: 1em;
-  top: 1.2em;
-}
-
-.site-footer::before {
-  left: 4em;
-  top: 0em;
-}
-
-.site-footer::after {
-  right: -4em;
-  bottom: 7.8em;
-}
-
 /** NOUVELLE SECTION ANIMATION-FESTIVAL **/
 .nomination {
   position: relative;
@@ -136,127 +86,14 @@
   font-size: 38px;
 }
 
-/* RÉGLAGE DE LA BANNIÈRE */
-.banner {
-  position: relative;
-  height: 800px;
-}
-
-.banner__background {
-  z-index: -2;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  min-width: 1440px;
-  opacity: 1;
-}
-
-.banner__video {
-  z-index: 1;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  min-width: 1440px;
-  opacity: 1;
-}
-
-/* FLOTTEMENT DU LOGO */
-.banner__logo {
-  position: sticky;
-  top: 80px;
-  z-index: 10;
-  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
-}
-
-.move-up {
-  animation: move-up 2s 300ms both;
-}
-
-/*Opacity Move -down*/
-@keyframes move-down {
-  0% {
-    transform: translateY(-300px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    visibility: visible;
-  }
-}
-/* Opacity move-up */
-@keyframes move-up {
-  0% {
-    transform: translateY(600px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-/* TITRE H1 ANIMATION */
-@keyframes float {
-  0% {
-    transform: translate3d(6px, 6px, 0);
-  }
-  12% {
-    transform: translate3d(0px, 6px, 0);
-  }
-  24% {
-    transform: translate3d(6px, -4px, 0);
-  }
-  36% {
-    transform: translate3d(6px, 0px, 0);
-  }
-  48% {
-    transform: translate3d(-4px, -6px, 0);
-  }
-  60% {
-    transform: translate3d(0px, -4px, 0);
-  }
-  72% {
-    transform: translate3d(-8px, 6px, 0);
-  }
-  84% {
-    transform: translate3d(-4px, 0px, 0);
-  }
-  100% {
-    transform: translate3d(6px, 6px, 0);
-  }
-}
-/** MEDIA QUERIES **/
-@media screen and (max-width: 768px) {
-  .banner__video {
-    display: none;
-  }
-  .banner__background {
-    display: block;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 700px) {
-  .banner {
-    height: 600px;
-  }
-  .banner__background {
-    min-width: 1200px;
-    opacity: 1;
-  }
-}
 @media screen and (max-width: 580px) {
-  .banner {
-    height: 400px;
-  }
-  .banner__background {
-    min-width: 900px;
-    opacity: 1;
-  }
   .nomination__oscars h3 {
     position: absolute;
     top: 43%;
     transform: translateY(-50%);
     line-height: 3.2rem;
     text-align: left;
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 /* ANIMATION NUAGE */
@@ -294,6 +131,126 @@
   right: 500px;
 }
 
+/* PARALLAX DU LOGO */
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;
+}
+
+.move-up {
+  animation: move-up 2s 300ms both;
+}
+
+/*Opacity Move -down*/
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+/* Opacity move-up */
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* LOGO ANIMATION DE FLOTTAISON */
+@keyframes float {
+  0% {
+    transform: translate3d(6px, 6px, 0);
+  }
+  12% {
+    transform: translate3d(0px, 6px, 0);
+  }
+  24% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  36% {
+    transform: translate3d(6px, 0px, 0);
+  }
+  48% {
+    transform: translate3d(-4px, -6px, 0);
+  }
+  60% {
+    transform: translate3d(0px, -4px, 0);
+  }
+  72% {
+    transform: translate3d(-8px, 6px, 0);
+  }
+  84% {
+    transform: translate3d(-4px, 0px, 0);
+  }
+  100% {
+    transform: translate3d(6px, 6px, 0);
+  }
+}
+/******************** ANIMATION DE ROTATION DES FLEURS *****************************/
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/************** Animation de rotation sur chaque fleurs ****************/
+.story__article::after,
+.story h2::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.site-footer ul::after {
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+/* Positionnements de chaque fleurs */
+.story h2::after {
+  left: -6em;
+  top: 6em;
+}
+
+.story h2::before {
+  left: -7em;
+}
+
+#studio h2::before {
+  left: -1em;
+  top: 0;
+}
+
+#studio h2::after {
+  right: 1em;
+  top: 1.2em;
+}
+
+.site-footer::before {
+  left: 4em;
+  top: 0em;
+}
+
+.site-footer::after {
+  right: -4em;
+  bottom: 7.8em;
+}
+
+.site-footer ul::after {
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  z-index: -1;
+}
+
 /****************** CAROUSSEL ********************/
 .swiper-container {
   width: 100%;
@@ -310,6 +267,59 @@
 figure img {
   max-width: 100%;
   border-radius: 10px;
+}
+
+/* RÉGLAGE DE LA BANNIÈRE */
+.banner {
+  position: relative;
+  height: 800px;
+}
+
+.banner__background {
+  z-index: -2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
+
+.banner__video {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 1440px;
+  opacity: 1;
+}
+
+/** MEDIA QUERIES **/
+@media screen and (max-width: 768px) {
+  .banner__video {
+    display: none;
+  }
+  .banner__background {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .banner {
+    height: 600px;
+  }
+  .banner__background {
+    min-width: 1200px;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 580px) {
+  .banner {
+    height: 400px;
+  }
+  .banner__background {
+    min-width: 900px;
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */
