@@ -22,7 +22,12 @@ get_header();
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
            
-
+            <article id="characters">
+                        <h3 class="title-bg">
+                            <div class="section-titre">Les personnages</div>
+                        </h3>
+            </article>
+            
             <?php get_template_part('/template-parts/caroussel'); ?>
 
             <article id="place">

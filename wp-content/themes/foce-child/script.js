@@ -41,18 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
 /* CAROUSEL */
 
 document.addEventListener("DOMContentLoaded", () => {
-    const swiper = new Swiper(".swiper-container", {
-        effect: "coverflow",
-        grabCursor: true,
-        slidesPerView: 3,  // Afficher 3 images
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 20,
-            depth: 20,
-            modifier: 1,
-        },
+    const swiper = new Swiper(".swiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      slidesPerView: 4,
+      centeredSlides: true,
+      spaceBetween: 30,
+      coverflowEffect: {
+        depth: 100,
+        modifier: 1,
+        stretch: 0,
+        slideShadows: false,
+    
+      },
+    })
     });
-});
 
 /* ANIMATION DES NUAGES */
 
