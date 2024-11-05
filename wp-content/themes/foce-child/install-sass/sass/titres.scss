@@ -1,23 +1,27 @@
+.main-navigation .site-title {
+  top: 50px;
+}
+
 /***************************** ANIMATION  DES TITRES ***************************/
 
 .section-titre {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  }
-  
-  .titre-visible {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.titre-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-titre {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 3s ease-out, transform 1s ease-out;
+
+  &.titre-visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
-  .section-titre {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 3s ease-out, transform 1s ease-out;
-  
-    &.titre-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  }
+}

@@ -98,18 +98,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burger-menu");
-  const closeMenuButton = document.getElementById("close-menu");
   const menuOverlay = document.getElementById("menu-overlay");
+  const closeMenu = document.getElementById("close-menu");
 
-  // Fonction d'ouverture du menu
-  burgerMenu.addEventListener("click", () => {
+  // Fonction pour ouvrir/fermer le menu
+  const toggleMenu = () => {
     burgerMenu.classList.toggle("open");
     menuOverlay.classList.toggle("open");
-  });
+  };
 
-  // Fonction de fermeture du menu avec la croix
-  closeMenuButton.addEventListener("click", () => {
-    burgerMenu.classList.remove("open");
-    menuOverlay.classList.remove("open");
-  });
+  // Écouteur pour le bouton burger
+  burgerMenu.addEventListener("click", toggleMenu);
+
+  // Écouteur pour le bouton de fermeture
+  closeMenu.addEventListener("click", toggleMenu);
 });

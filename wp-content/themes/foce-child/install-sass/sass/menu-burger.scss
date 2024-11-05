@@ -1,12 +1,13 @@
 /************** BOUTON MENU BURGER *************/
 
+// Bouton Menu Burger
 .menu-toggle {
   display: flex;
   flex-direction: column;
   cursor: pointer;
   position: absolute;
   top: 10px;
-  right: 30px;
+  right: 30px; // Ajustez si nécessaire
   z-index: 1000;
 
   .line {
@@ -14,27 +15,11 @@
     height: 3px;
     background-color: black;
     margin: 5px 0;
-    transition: all 0.3s ease;
-  }
-
-  .close {
-    display: none;
-    font-size: 40px;
-    color: black;
-    transition: all 0.3s ease;
-  }
-
-  &.open .line {
-    opacity: 0;
-  }
-
-  &.open .close {
-    display: block;
+    transition: scale 0.8s ease;
   }
 }
 
 /* Styles pour le menu overlay */
-
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -48,7 +33,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   z-index: 1000;
 }
 
@@ -73,36 +58,37 @@
 /* Style pour le titre centré */
 .overlay-header .site-title {
   margin: 0 auto; /* Centre le titre dans la barre */
-  font-size: 24px;
+  font-size: 21.5px;
   text-align: center;
   flex-grow: 1;
-  color: #333; /* Ajuste la couleur selon le design */
 }
 
-/* Style pour le bouton de fermeture */
-.overlay-header .close-menu {
-  font-size: 24px;
-  cursor: pointer;
-  color: #333; /* Ajuste la couleur selon le design */
-  margin-left: auto; /* Pousse la croix vers la droite */
-  padding: 10px;
+.site-title-primary {
+  margin: 0;
+}
+
+.site-title-primary a {
+  font-size: 21.5px;
+  position: absolute;
+  left: 38.6%;
+  color: #000000;
+  text-decoration: none;
+  top: 24px;
 }
 
 .site-title {
-  font-size: 2rem;
-  color: #000000;
   margin: 0;
 }
 
 .site-title a {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 37.95%;
   color: #000000;
   text-decoration: none;
 }
 
 /* Style de la croix de fermeture */
-.menu-close {
+#close-menu {
   background: none;
   border: none;
   color: #000000;
@@ -112,9 +98,9 @@
 
 /* Style des liens de navigation */
 .overlay-navigation ul {
-  list-style: none;
+  display: block;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   text-align: center;
 }
 
@@ -129,4 +115,48 @@
 
 .overlay-navigation a:hover {
   filter: drop-shadow(0 0 4px #ff5c00);
+}
+
+.menu-logo-burger {
+  position: relative;
+  left: 33%;
+}
+
+/******** Animation des Fleurs ********/
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classe générale pour chaque fleur */
+.flower {
+  position: absolute;
+  width: 100px; /* Ajustez la taille selon vos besoins */
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotate 20s linear infinite;
+}
+
+/* Positionnez chaque fleur individuellement avec des classes spécifiques */
+.flower1 {
+  background-image: url("/images/Orchid.png");
+  top: 152px;
+  left: -59px;
+}
+
+.flower2 {
+  background-image: url("/images/Flower.png");
+  top: 30%;
+  left: 50%;
+}
+
+.flower3 {
+  background-image: url("/images/Hibiscus-footer.png");
+  top: 60%;
+  right: 10%;
 }
