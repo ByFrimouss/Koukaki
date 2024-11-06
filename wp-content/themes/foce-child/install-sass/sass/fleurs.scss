@@ -14,8 +14,8 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after,
-.site-footer::before,
-.site-footer::after,
+.nomination_1,
+.nomination_2,
 .site-footer ul::after {
   position: absolute;
   animation: rotate 20s linear infinite;
@@ -41,16 +41,6 @@
 #studio h2::after {
   right: 1em;
   top: 1.2em;
-}
-
-.site-footer::before {
-  left: 4em;
-  top: 0em;
-}
-
-.site-footer::after {
-  right: -4em;
-  bottom: 7.8em;
 }
 
 .site-footer ul::after {

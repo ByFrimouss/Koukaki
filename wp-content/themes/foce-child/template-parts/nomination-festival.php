@@ -1,3 +1,14 @@
+<!-- DÉPLACEMENT DES FLEURS DU FOOTER -->
+
+<div class="nomination_1" >
+    <img src="wp-content/themes/foce-child/images/orchid.png">
+</div>
+
+<div class="nomination_2">
+    <img src="wp-content/themes/foce-child/images/Sunflower.png">
+</div>
+
+
 <!-- SECTION NOMINATION FESTIVAL -->
 
 <section class=" section nomination">
