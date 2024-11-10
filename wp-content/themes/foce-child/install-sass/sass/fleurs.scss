@@ -14,8 +14,8 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after,
-.site-footer::before,
-.site-footer::after,
+.nomination_1,
+.nomination_2,
 .site-footer ul::after {
   position: absolute;
   animation: rotate 20s linear infinite;
@@ -24,14 +24,6 @@
 }
 
 /* Positionnements de chaque fleurs */
-.story h2::after {
-  left: -6em;
-  top: 6em;
-}
-
-.story h2::before {
-  left: -7em;
-}
 
 #studio h2::before {
   left: -1em;

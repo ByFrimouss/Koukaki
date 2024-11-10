@@ -67,15 +67,18 @@
 
 
     <!-- Fleurs décoratives -->
-    <div class="flower flower1"></div>
-    <div class="flower flower2"></div>
-    <div class="flower flower3"></div>
-    <div class="flower flower4"></div>
-    <div class="flower flower5"></div>
-    <div class="cat cat1"></div>
-    <div class="cat cat2"></div>
-    <div class="cat cat3"></div>
+    <div id="i-img-burg" class="img-burg-all">
+        <img class="img-burg flower-burg hibiscus-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/hibiscus.png'; ?> " alt="Fleur d'hibiscus">
+        <img class="img-burg flower-burg flower-simple-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/Flower.png'; ?> " alt="Fleur simple">
+        <img class="img-burg flower-burg orchid-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/orchid.png'; ?> " alt="Fleur d'orchidé">
+        <img class="img-burg flower-burg flower-random-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/random_flower.png'; ?> " alt="Fleur simple">
+        <img class="img-burg flower-burg sunflower-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/Sunflower.png'; ?> " alt="Fleur de tournesol">
+        <img class="img-burg cat-burg cat-1-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/cat.png'; ?> " alt="Chat 1">
+        <img class="img-burg cat-burg cat-2-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/cat-1.png'; ?> " alt="Chat 2">
+        <img class="img-burg cat-burg cat-3-burg" src="<?php echo get_stylesheet_directory_uri() . '/images/Group-180.png'; ?> " alt="Chat 3">
+    </div>
 
-            </div>
+    <span class="foot-burg">Studio Koukaki</span>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
