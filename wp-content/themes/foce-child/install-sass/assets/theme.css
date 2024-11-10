@@ -52,6 +52,34 @@
 }
 
 /** NOUVELLE SECTION ANIMATION-FESTIVAL **/
+/** NOUVELLE SECTION ANIMATION-FESTIVAL **/
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nominationoscars {
+  position: relative;
+}
+
+.nominationoscars img {
+  height: 100%;
+}
+
+.nomination__oscars h3 {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+  font-size: 38px;
+}
+
 .nomination {
   position: relative;
   padding: 150px 0 50px;
@@ -248,16 +276,6 @@
   top: 1.2em;
 }
 
-.site-footer::before {
-  left: 4em;
-  top: 0em;
-}
-
-.site-footer::after {
-  right: -4em;
-  bottom: 7.8em;
-}
-
 .site-footer ul::after {
   left: calc(50% - 323px);
   bottom: -28.5em;
@@ -372,7 +390,7 @@
     opacity: 1;
   }
 }
-/************** BOUTON MENU BURGER *************/
+/************** MENU PRIMARY + MENU BURGER *************/
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -406,7 +424,6 @@
   transition: opacity 0.2s ease, visibility 0.2s ease;
   z-index: 1000;
 }
-
 .menu-overlay.open {
   opacity: 1;
   visibility: visible;
@@ -425,12 +442,14 @@
 
 .overlay-header .site-title {
   margin: 0 auto;
+  margin: 0 auto;
   font-size: 21.5px;
   text-align: center;
   flex-grow: 1;
 }
 
-.site-title-primary {
+.site-title-primary,
+.site-title {
   margin: 0;
 }
 
@@ -440,11 +459,7 @@
   left: 38.6%;
   color: #000000;
   text-decoration: none;
-  top: 24px;
-}
-
-.site-title {
-  margin: 0;
+  top: 40px;
 }
 
 .site-title a {
@@ -469,13 +484,65 @@
   text-align: center;
 }
 
+/* ANIMATION DE FADE SUR LE MENU BURGER */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .overlay-navigation ul li {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease, transform 2s ease;
   margin: 4em;
 }
 
+.menu-overlay.open .overlay-navigation ul li {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 2s ease forwards;
+}
+
+/* ANIMATION D'OPACITÉ SUR LES TITRES DU MENU BURGER */
+@keyframes fadeOpacity {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .overlay-navigation ul li a {
+  opacity: 0;
+  transform: translateY(20px);
   font-size: 64px;
   color: #000000;
+}
+
+/* ANIMATION EN CASCADE AUX LIENS DU MENU BURGER */
+.menu-overlay.open .overlay-navigation ul li:nth-child(1) a {
+  animation: fadeOpacity 0.6s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.menu-overlay.open .overlay-navigation ul li:nth-child(2) a {
+  animation: fadeOpacity 0.6s ease forwards;
+  animation-delay: 1s;
+}
+
+.menu-overlay.open .overlay-navigation ul li:nth-child(3) a {
+  animation: fadeOpacity 0.6s ease forwards;
+  animation-delay: 1.4s;
+}
+
+.menu-overlay.open .overlay-navigation ul li:nth-child(4) a {
+  animation: fadeOpacity 0.6s ease forwards;
+  animation-delay: 1.8s;
 }
 
 .overlay-navigation a:hover {
