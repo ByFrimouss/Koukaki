@@ -35,7 +35,7 @@ get_header();
 
             <article id="place">
 
-                <img src="<?php echo get_theme_file_uri() . '/images/Studio_Koukaki-image_place.png'; ?>"
+                <img class="bg-nuage" src="<?php echo get_theme_file_uri() . '/images/Studio_Koukaki-image_place.png'; ?>"
                     alt="arrière plan nuage montagne">
 
                 <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/images/big_cloud.png'; ?>"

@@ -47,10 +47,18 @@
 
 @media screen and (max-width: 580px) {
   .banner {
-    height: 400px;
+    height: 300px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
   }
   .banner__background {
     min-width: 900px;
     opacity: 1;
+  }
+  .banner__logo img {
+    margin-top: -150px;
   }
 }

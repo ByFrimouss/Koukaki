@@ -25,6 +25,10 @@
 
 /* Positionnements de chaque fleurs */
 
+#studio {
+  overflow: hidden;
+}
+
 #studio h2::before {
   left: -1em;
   top: 0;
@@ -39,4 +43,10 @@
   left: calc(50% - 323px);
   bottom: -28.5em;
   z-index: -1;
+}
+
+@media screen {
+  .nomination_1 img {
+    display: none;
+  }
 }

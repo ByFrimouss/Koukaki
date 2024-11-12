@@ -96,20 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /*************** ANIMATION DU MENU BURGER *************************/
 
-document.addEventListener("DOMContentLoaded", () => {
+// JavaScript pour gérer l'ouverture et la fermeture du menu
+document.addEventListener("DOMContentLoaded", function () {
   const burgerMenu = document.getElementById("burger-menu");
-  const menuOverlay = document.getElementById("menu-overlay");
   const closeMenu = document.getElementById("close-menu");
+  const menuOverlay = document.getElementById("menu-overlay");
 
-  // Fonction pour ouvrir/fermer le menu
-  const toggleMenu = () => {
-    burgerMenu.classList.toggle("open");
-    menuOverlay.classList.toggle("open");
-  };
+  burgerMenu.addEventListener("click", function () {
+    menuOverlay.classList.add("open");
+  });
 
-  // Écouteur pour le bouton burger
-  burgerMenu.addEventListener("click", toggleMenu);
-
-  // Écouteur pour le bouton de fermeture
-  closeMenu.addEventListener("click", toggleMenu);
+  closeMenu.addEventListener("click", function () {
+    menuOverlay.classList.remove("open");
+  });
 });

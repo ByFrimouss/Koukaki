@@ -29,21 +29,23 @@
 
     <header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
+            
+        <div class="primary-header">
             <h1 class="site-title-primary">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
             </h1>
-
 
             <!-- Bouton Menu Burger -->
             <button id="burger-menu" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
-            </button>
-            
+            </button> 
+        </div>
+        
             <!-- Menu Overlay -->
             <div id="menu-overlay" class="menu-overlay">
-                <header class="overlay-header">
+                <div class="overlay-header">
                     <h1 class="site-title">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                     </h1>
@@ -52,9 +54,9 @@
                     <button id="close-menu" class="menu-close">
                         &#10005; <!-- Unicode pour une croix -->
                     </button>
-                </header>
+            </div>
 
-                <nav class="overlay-navigation">
+                <div class="overlay-navigation">
                     <img class="menu-logo-burger" src="<?php echo get_theme_file_uri() . '/images/Image-logo-en-paralax.png'; ?>"
                         alt="Logo fleurs d'oranger & chats errants">
                     <ul>
@@ -63,7 +65,7 @@
                         <li><a href="#place">Lieu</a></li>
                         <li><a href="#studio">Studio Koukaki</a></li>
                     </ul>
-                </nav>
+                </div>
 
 
     <!-- Fleurs décoratives -->

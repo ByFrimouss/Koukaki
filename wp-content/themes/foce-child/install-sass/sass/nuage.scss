@@ -1,35 +1,49 @@
 /* ANIMATION NUAGE */
 
 #place {
-    position: relative;
-    overflow: hidden; /* Empêche les éléments de déborder */
-  }
-  
-  .story #place > div {
-    max-width: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-left: -95em;
-    margin-top: -3em;
-    z-index: 5;
-  }
-  
-  #place .place--big_cloud,
-  #place .place--little_cloud {
-    position: absolute;
-    filter: blur(8px);
-  }
-  
+  position: relative;
+  overflow: hidden; /* Empêche les éléments de déborder */
+}
+
+.story #place > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: -95em;
+  margin-top: -3em;
+  z-index: 5;
+}
+
+#place .place--big_cloud,
+#place .place--little_cloud {
+  position: absolute;
+  filter: blur(8px);
+}
+
+#place .place--big_cloud {
+  height: 122px;
+  top: 70px;
+  right: 90px;
+}
+
+#place .place--little_cloud {
+  height: 55px;
+  top: 250px;
+  right: 500px;
+}
+
+@media screen and (max-width: 580px) {
   #place .place--big_cloud {
-    height: 122px;
-    top: 70px;
-    right: 90px;
+    height: 80px;
+    top: 100px;
+    right: 50px;
   }
-  
+
   #place .place--little_cloud {
-    height: 55px;
-    top: 250px;
-    right: 500px;
+    height: 20px;
+    top: 200px;
+    right: 180px;
   }
+}
