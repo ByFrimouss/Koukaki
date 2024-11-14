@@ -102,7 +102,7 @@
 // STYLES DES LIENS DE NAVIGATION ET ANIMATIONS DE FADE
 .overlay-navigation ul {
   padding: 0;
-  margin: 10px 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -110,7 +110,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  margin: 4em;
+  margin: 2em;
 }
 
 // ANIMATION GÉNÉRALE FADE-IN POUR LES LIENS
@@ -130,11 +130,11 @@
   opacity: 1;
   transform: translateY(0);
   animation: fadeIn 0.8s ease forwards;
-  top: 150px;
+  top: 50px;
 }
 
 .overlay-navigation ul li a {
-  font-size: 64px;
+  font-size: 52px;
   color: #000000;
   text-decoration: none;
 }
@@ -178,7 +178,8 @@
 // LOGO POSITIONNÉ
 .menu-logo-burger {
   position: relative;
-  left: 33%;
+  left: 25%;
+  top: 50px;
 }
 
 // ANIMATION DES FLEURS
@@ -207,5 +208,5 @@
   position: relative;
   text-transform: uppercase;
   align-self: center;
-  top: 65vh;
+  top: 5em;
 }

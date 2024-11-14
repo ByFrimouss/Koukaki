@@ -35,15 +35,36 @@
 }
 
 @media screen and (max-width: 580px) {
+  #place {
+    display: flex;
+    width: 100%;
+    min-height: 0px !important;
+    background-size: cover;
+  }
+
+  .story #place > div h3 {
+    position: absolute;
+    left: -50px;
+    top: 0.9em;
+  }
+
+  .story #place > div p {
+    position: absolute;
+    left: 0;
+    top: 9.5em !important;
+    font-size: 12px;
+    padding-right: 100px;
+  }
+
   #place .place--big_cloud {
     height: 80px;
-    top: 100px;
+    top: 50px;
     right: 50px;
   }
 
   #place .place--little_cloud {
     height: 20px;
-    top: 200px;
+    top: 130px;
     right: 180px;
   }
 }

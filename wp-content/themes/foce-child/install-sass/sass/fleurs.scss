@@ -14,7 +14,6 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after,
-.nomination_1,
 .nomination_2,
 .site-footer ul::after {
   position: absolute;
@@ -45,7 +44,15 @@
   z-index: -1;
 }
 
-@media screen {
+.nomination_1 img {
+  position: relative;
+  animation: rotate 20s linear infinite;
+  transform-origin: center center;
+  max-width: 100%;
+  left: 1300px;
+}
+
+@media screen and (max-width: 580px) {
   .nomination_1 img {
     display: none;
   }

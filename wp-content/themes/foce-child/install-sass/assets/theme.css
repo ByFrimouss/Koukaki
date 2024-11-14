@@ -154,14 +154,32 @@
 }
 
 @media screen and (max-width: 580px) {
+  #place {
+    display: flex;
+    width: 100%;
+    min-height: 0px !important;
+    background-size: cover;
+  }
+  .story #place > div h3 {
+    position: absolute;
+    left: -50px;
+    top: 0.9em;
+  }
+  .story #place > div p {
+    position: absolute;
+    left: 0;
+    top: 9.5em !important;
+    font-size: 12px;
+    padding-right: 100px;
+  }
   #place .place--big_cloud {
     height: 80px;
-    top: 100px;
+    top: 50px;
     right: 50px;
   }
   #place .place--little_cloud {
     height: 20px;
-    top: 200px;
+    top: 130px;
     right: 180px;
   }
 }
@@ -242,7 +260,6 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after,
-.nomination_1,
 .nomination_2,
 .site-footer ul::after {
   position: absolute;
@@ -271,7 +288,15 @@
   z-index: -1;
 }
 
-@media screen {
+.nomination_1 img {
+  position: relative;
+  animation: rotate 20s linear infinite;
+  transform-origin: center center;
+  max-width: 100%;
+  left: 1300px;
+}
+
+@media screen and (max-width: 580px) {
   .nomination_1 img {
     display: none;
   }
@@ -357,19 +382,12 @@
 
 /** MEDIA QUERIES **/
 @media screen and (max-width: 768px) {
-  .banner__video {
-    display: none;
-  }
-  .banner__background {
-    display: block;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 700px) {
   .banner {
     height: 600px;
   }
   .banner__background {
+    display: block;
+    width: 100%;
     min-width: 1200px;
     opacity: 1;
   }
@@ -389,6 +407,9 @@
   }
   .banner__logo img {
     margin-top: -150px;
+  }
+  .banner__video {
+    display: none;
   }
 }
 /************** MENU PRIMARY + MENU BURGER *************/
@@ -484,7 +505,7 @@
 
 .overlay-navigation ul {
   padding: 0;
-  margin: 10px 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -492,7 +513,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  margin: 4em;
+  margin: 2em;
 }
 
 @keyframes fadeIn {
@@ -509,11 +530,11 @@
   opacity: 1;
   transform: translateY(0);
   animation: fadeIn 0.8s ease forwards;
-  top: 150px;
+  top: 50px;
 }
 
 .overlay-navigation ul li a {
-  font-size: 64px;
+  font-size: 52px;
   color: #000000;
   text-decoration: none;
 }
@@ -554,7 +575,8 @@
 
 .menu-logo-burger {
   position: relative;
-  left: 33%;
+  left: 25%;
+  top: 50px;
 }
 
 @keyframes rotate {
@@ -580,7 +602,7 @@
   position: relative;
   text-transform: uppercase;
   align-self: center;
-  top: 65vh;
+  top: 5em;
 }
 
 /*# sourceMappingURL=theme.css.map */

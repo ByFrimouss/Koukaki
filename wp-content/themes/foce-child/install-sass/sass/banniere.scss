@@ -26,20 +26,12 @@
 /** MEDIA QUERIES **/
 
 @media screen and (max-width: 768px) {
-  .banner__video {
-    display: none;
-  }
-  .banner__background {
-    display: block;
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 700px) {
   .banner {
     height: 600px;
   }
   .banner__background {
+    display: block;
+    width: 100%;
     min-width: 1200px;
     opacity: 1;
   }
@@ -60,5 +52,8 @@
   }
   .banner__logo img {
     margin-top: -150px;
+  }
+  .banner__video {
+    display: none;
   }
 }
