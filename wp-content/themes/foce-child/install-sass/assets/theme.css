@@ -455,6 +455,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -500,6 +501,8 @@
   border: none;
   color: #000000;
   font-size: 4em;
+  padding: 0;
+  margin-right: 90px;
   cursor: pointer;
 }
 
@@ -534,6 +537,7 @@
 }
 
 .overlay-navigation ul li a {
+  position: relative;
   font-size: 52px;
   color: #000000;
   text-decoration: none;
@@ -542,7 +546,7 @@
 @keyframes fadeOpacity {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -550,23 +554,23 @@
   }
 }
 .menu-overlay.open .overlay-navigation ul li:nth-child(1) a {
-  animation: fadeOpacity 0.6s ease forwards;
+  animation: fadeOpacity 0.8s ease forwards;
   animation-delay: 0.2s;
 }
 
 .menu-overlay.open .overlay-navigation ul li:nth-child(2) a {
-  animation: fadeOpacity 0.6s ease forwards;
-  animation-delay: 0.4s;
+  animation: fadeOpacity 0.8s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .menu-overlay.open .overlay-navigation ul li:nth-child(3) a {
-  animation: fadeOpacity 0.6s ease forwards;
-  animation-delay: 0.6s;
+  animation: fadeOpacity 0.8s ease forwards;
+  animation-delay: 1.2s;
 }
 
 .menu-overlay.open .overlay-navigation ul li:nth-child(4) a {
-  animation: fadeOpacity 0.6s ease forwards;
-  animation-delay: 0.8s;
+  animation: fadeOpacity 0.8s ease forwards;
+  animation-delay: 1.6s;
 }
 
 .overlay-navigation a:hover {
@@ -589,13 +593,71 @@
 }
 #i-img-burg {
   position: absolute;
-  align-self: center;
+}
+
+.img-burg-all {
+  z-index: -20;
+  pointer-events: none;
 }
 
 .hibiscus-burg {
-  right: -30px;
+  width: 400px;
+  height: 400px;
+  top: 400px;
+  left: 830px;
+  filter: blur(3px);
+  position: relative;
+  animation: rotate 20s linear infinite;
+}
+
+.orchid-burg {
+  top: -10px;
+  left: -540px;
   position: absolute;
   animation: rotate 20s linear infinite;
+}
+
+.flower-random-burg {
+  scale: 0.4;
+  top: 80px;
+  left: 920px;
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+.flower-simple-burg {
+  top: 320px;
+  left: -260px;
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+.sunflower-burg {
+  top: -10px;
+  left: 530px;
+  position: absolute;
+  animation: rotate 20s linear infinite;
+}
+
+.cat-1-burg {
+  top: 60px;
+  left: -180px;
+  position: absolute;
+  animation: float 6s 2s infinite ease-in-out;
+}
+
+.cat-2-burg {
+  top: 480px;
+  left: -420px;
+  position: absolute;
+  animation: float 6s 2s infinite ease-in-out;
+}
+
+.cat-3-burg {
+  position: relative;
+  top: 130px;
+  left: 180px;
+  animation: float 6s 2s infinite ease-in-out;
 }
 
 .foot-burg {
@@ -603,6 +665,68 @@
   text-transform: uppercase;
   align-self: center;
   top: 5em;
+}
+
+@media screen and (max-width: 580px) {
+  .site-title a {
+    font-size: 20px;
+    position: absolute;
+    left: 22%;
+    color: #000000;
+    text-decoration: none;
+    top: 25px;
+  }
+  #close-menu {
+    color: #000000;
+    font-size: 3em;
+    padding: 0;
+    margin-right: 45px;
+  }
+  .menu-logo-burger {
+    left: 40px;
+    top: 20px;
+  }
+  .overlay-navigation ul li a {
+    font-size: 30px;
+  }
+  .overlay-navigation ul {
+    margin-top: -30px;
+  }
+  .flower-random-burg,
+  .flower-simple-burg,
+  .sunflower-burg,
+  .cat-1-burg {
+    display: none;
+  }
+  .hibiscus-burg {
+    width: 300px;
+    height: 300px;
+    top: 320px;
+    left: 380px;
+    filter: blur(3px);
+    position: relative;
+    animation: rotate 20s linear infinite;
+  }
+  .orchid-burg {
+    top: -30px;
+    left: -150px;
+    position: absolute;
+    animation: rotate 20s linear infinite;
+  }
+  .cat-2-burg {
+    scale: 0.6;
+    top: 300px;
+    left: -40px;
+    position: absolute;
+    animation: float 6s 2s infinite ease-in-out;
+  }
+  .cat-3-burg {
+    position: relative;
+    scale: 0.8;
+    top: -80px;
+    left: 50px;
+    animation: float 6s 2s infinite ease-in-out;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

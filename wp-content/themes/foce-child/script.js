@@ -59,32 +59,37 @@ document.addEventListener("DOMContentLoaded", () => {
 /**************** ANIMATION DES NUAGES ****************/
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Sélectionner les nuages et la section "Le Lieu"
   const bigCloud = document.querySelector(".place--big_cloud");
   const littleCloud = document.querySelector(".place--little_cloud");
   const placeSection = document.querySelector("#place");
 
   // Fonction qui ajuste la position des nuages en fonction du scroll dans la section "Le Lieu"
   function moveClouds() {
-    // Obtenir la position de la section "Le Lieu" par rapport au haut de la page
     const sectionTop = placeSection.offsetTop;
     const sectionHeight = placeSection.offsetHeight;
     const scrollPosition = window.scrollY;
 
-    // Vérifier si le scroll est dans la section "Le Lieu"
+    // Facteur de ralentissement
+    const isMobile = window.innerWidth <= 768; // Détecte les écrans de largeur ≤ 768px
+    const slowdownFactor = isMobile ? 0.5 : 1; // Réduction du déplacement sur mobile
+
     if (
       scrollPosition >= sectionTop &&
       scrollPosition <= sectionTop + sectionHeight
     ) {
-      // Calculer le pourcentage de scroll dans la section "Le Lieu"
       const scrollInSection = scrollPosition - sectionTop;
       const sectionScrollRatio = scrollInSection / sectionHeight;
 
-      // Ajuster les déplacements pour que les nuages atteignent le bord gauche (limite plus élevée)
-      const moveBigCloud = Math.min(sectionScrollRatio * 380, 380); // Ajusté à 380px maximum pour un mouvement plus lent
-      const moveLittleCloud = Math.min(sectionScrollRatio * 460, 460); // Ajusté à 460px maximum pour un déplacement plus visible
+      // Appliquer le facteur de ralentissement
+      const moveBigCloud = Math.min(
+        sectionScrollRatio * 380 * slowdownFactor,
+        380
+      );
+      const moveLittleCloud = Math.min(
+        sectionScrollRatio * 460 * slowdownFactor,
+        460
+      );
 
-      // Appliquer la transformation pour déplacer les nuages
       bigCloud.style.transform = `translateX(-${moveBigCloud}px)`;
       littleCloud.style.transform = `translateX(-${moveLittleCloud}px)`;
     }
@@ -97,16 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
 /*************** ANIMATION DU MENU BURGER *************************/
 
 // JavaScript pour gérer l'ouverture et la fermeture du menu
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.getElementById("burger-menu");
   const closeMenu = document.getElementById("close-menu");
   const menuOverlay = document.getElementById("menu-overlay");
 
-  burgerMenu.addEventListener("click", function () {
+  burgerMenu.addEventListener("click", () => {
     menuOverlay.classList.add("open");
   });
 
-  closeMenu.addEventListener("click", function () {
+  closeMenu.addEventListener("click", () => {
     menuOverlay.classList.remove("open");
   });
 });
